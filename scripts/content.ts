@@ -3,9 +3,13 @@ window.addEventListener("load", function () {
 });
 
 chrome.runtime.onMessage.addListener(request => {
-    if (request.message === "newChat") {
-        // Create a new chat
-        newChat();
+    switch(request.message) {
+        case "newChat":
+            newChat();
+            break;
+        case "focusChat":
+            focusChat();
+            break;
     }
 });
 
@@ -15,4 +19,8 @@ function startup() {
 
 function newChat() {
     console.log("New chat created!");
+}
+
+function focusChat() {
+    console.log("Chat focused!");
 }

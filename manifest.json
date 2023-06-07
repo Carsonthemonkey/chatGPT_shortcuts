@@ -21,6 +21,12 @@
                 "default": "Alt+N"
             },
             "description": "Create new ChatGPT chat"
+        },
+        "Focus-Chat": {
+            "suggested_key": {
+                "default": "Ctrl+Q"
+            },
+            "description": "Focus on input box"
         }
     }
 }

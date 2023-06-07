@@ -5,11 +5,22 @@
     "version": "0.0.1",
     "content_scripts": [
         {
-            "matches": ["https://chat.openai.com/*"],
-            "js": ["dist/content.js"]
+            "js": ["dist/content.js"],
+            "matches": ["https://chat.openai.com/*"]
         }
     ],
+    "action": {
+        "default_popup": "popup.html"
+    },
     "background": {
         "service_worker": "dist/background.js"
+    },
+    "commands": {
+        "New-Chat": {
+            "suggested_key": {
+                "default": "Alt+N"
+            },
+            "description": "Create new ChatGPT chat"
+        }
     }
 }

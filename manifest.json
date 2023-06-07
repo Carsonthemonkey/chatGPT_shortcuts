@@ -24,7 +24,7 @@
         },
         "Focus-Chat": {
             "suggested_key": {
-                "default": "Ctrl+Q"
+                "default": "Ctrl+A"
             },
             "description": "Focus on input box"
         }

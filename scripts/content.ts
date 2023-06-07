@@ -2,6 +2,8 @@ window.addEventListener("load", function () {
     startup();
 });
 
+const chatBox: HTMLTextAreaElement | null = document.querySelector("textarea#prompt-textarea");
+
 chrome.runtime.onMessage.addListener(request => {
     switch(request.message) {
         case "newChat":
@@ -13,6 +15,13 @@ chrome.runtime.onMessage.addListener(request => {
     }
 });
 
+document.addEventListener("keydown", function (event) {
+    if(event.key == "q" && document.activeElement != chatBox) {
+        event.preventDefault();
+        focusChat();
+    }
+})
+
 function startup() {
     console.log("Content script started!");
 }
@@ -22,5 +31,6 @@ function newChat() {
 }
 
 function focusChat() {
-    console.log("Chat focused!");
+    chatBox?.focus();
+    if(chatBox) chatBox.textContent = "";
 }
